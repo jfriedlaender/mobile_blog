@@ -1,0 +1,22 @@
+<div data-role="header" data-backbtn="false">
+  <%= link_to 'Back', posts_path, "data-icon" => "arrow-l" %>	
+  <h1>Details</h1>
+  <%= link_to 'Edit', edit_post_path(@post), "data-icon" => "gear" %>
+</div>
+
+<div data-role="content">
+	<p>
+	  <b>Name:</b>
+	  <%= @post.name %>
+	</p>
+
+	<p>
+	  <b>Title:</b>
+	  <%= @post.title %>
+	</p>
+
+	<p>
+	  <b>Content:</b>
+	  <%= @post.content %>
+	</p>
+</div>

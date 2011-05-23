@@ -1,0 +1,21 @@
+<div data-role="header" data-backbtn="false">
+	<%= link_to "Home", root_path, "data-icon" => "home" %>
+	<h1>Posts</h1>
+	<%= link_to 'Add', new_post_path, "data-icon" => "plus" %>
+</div>
+
+<div data-role="content">
+	<% if @posts.count > 0 %>	
+		<ul data-role="listview" >
+			<% @posts.each do |p| %>
+				<li>
+					<a href="<%= post_path(p) %>">
+						<h1><%= p.title %></h1>
+					</a>
+				</li>
+			<% end %>
+		</ul>
+	<% else %>
+		<p>There are no posts</p>
+	<% end %>
+</div>
