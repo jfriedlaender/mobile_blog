@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   before_filter :prepare_for_touch_screen
   
   def mobile_device?
-    request.subdomains.first && request.subdomains.first.downcase == "m"    
+    request.user_agent =~ /Mobile|webOS/
   end
   helper_method :mobile_device?
   
